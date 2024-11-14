@@ -1,0 +1,261 @@
+/* CSS part highlevel handled */
+
+/* default margin padding removed here and padding margin border not considered while calculating height width*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* complete page style applied for body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mona Sans Condensed', sans-serif;
+    color: #394861;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, #383AFE, #dee0e7);  
+    line-height: 22px;
+}
+
+/* invoice section styles  not given height to the container height would be max-content */
+.invoiceWrapper {
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 35px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.invoiceWrapper::after {
+    background: linear-gradient(to top right, #e4e5ea, #6366f5);
+    content: '';
+    position: absolute;
+    height: 102%;
+    width: 101%;
+    border-radius: 40px;
+    z-index: -1;
+}
+.invoiceContent {
+    width: 100%;
+    height: 100%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.titleWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.invoiceTitle {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* invoice status dynamic component style here */
+.status {
+    padding: 0px 10px;
+    border-radius: 20px;
+    background: #f1f1fc;
+    color: #4b3fe6;
+    font-size: 14px;
+    text-transform: capitalize;
+    width: max-content;
+}
+
+.paid {
+    border: 1px solid #babaf0;
+}
+
+.failed {
+    border: 1px solid #f3b1b1;
+    background: #fef1f1;
+    color: #f14460;
+}
+
+
+/* button download and export css*/
+.buttonsWrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.button {
+    height: 40px;
+    width: max-content;
+    padding: 4px 20px;
+    font-size: 16px;
+    background-color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    svg {
+        width: 20px;
+    }
+    
+}
+
+.button.download {
+    color: #fff ;
+    background-color: #4f45e5;
+}
+
+button.export {
+    border: 1px solid #cfd9e5;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #cfd9e5;
+}
+
+th {
+    border-top: 1px solid #cfd9e5;
+    cursor: pointer;
+    color: #555;
+    padding: 12px 20px;
+}
+
+
+.tableInvoiceSection{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    svg{
+      width: 15px;  
+    }
+}
+
+
+
+/* footer section css*/
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+
+/* pagination section css */
+.paginationWrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.prevBtn,
+.nextBtn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+ svg{
+  width: 8px;
+}
+.paginationNumbers {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.currentPage {
+    height: 30px;
+    width: 30px;
+    border-radius: 25px;
+    background: #f1f1fc;
+    color: #4b3fe6;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* checkbox css*/
+
+.headerCheckboxThWrapper {
+   display:flex;
+   gap: 16px;
+   color: #394861;
+   align-items: center;
+   .svgWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+        width: 10px;
+        fill: #394861;
+       }
+   }
+} 
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #cdd3de;
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    border: 1px solid #9c9ab1;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #4f45e3; 
+    border-color: #4f45e3; 
+  }
+  
+  input[type="checkbox"]:checked::after {
+    content: ''; 
+    position: absolute;
+    top: 3px; 
+    left: 6px;
+    width: 4px; 
+    height: 8px; 
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); 
+  }
+
+  input[type="checkbox"]:indeterminate {
+    background-color: #4f45e3; 
+  }
+  input[type="checkbox"]:indeterminate::after {
+    content: ''; 
+    position: absolute;
+    top: 8px; 
+    left: 4px;
+    width: 8px; 
+    border: solid white;
+    border-width: 0 2px 2px 0;
+  }
+  
